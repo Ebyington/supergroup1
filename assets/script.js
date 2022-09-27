@@ -1,5 +1,5 @@
 var APIkey = '975449a451msh2a06483e508d496p18c10djsnf0466bf81871';
-var ing = function getIng(){document.getElementbyId('ingr');};
+var ing = function getIng(){document.getElementbyId('Hungryfor');};
 
 addEventListener(onClick)
 
