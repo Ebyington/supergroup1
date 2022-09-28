@@ -1,42 +1,87 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Date Night Decider</title>
-  </head>
-  <body>
-    <header id="top">
-        <h1>Date Night Decider</h1>
-    </header>
-  </body>
-<!-- selector for tv show or movie -->
-  <form>
-    <div class="form-group">
-      <label for="TVorMovie">Want to watch a show or movie?</label>
-      <select class="form-control" id="TvorMovie">
-        <option>TV show</option>
-        <option>Movie</option>
-      </select>
-    </div>
-    <!-- selector for genre of movie/tv show -->
-    <div class="form-group">
-      <label for="GenreSelect">What Genre would you like?</label>
-      <select multiple class="form-control" id="GenreSelect">
-        <option>Horror</option>
-        <option>Comedy</option>
-        <option>Action</option>
-        <option>Kid/Family</option>
-        <option>Drama</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label for="Hungryfor">Tell us what you're hungry for</label>
-      <textarea class="form-control" id="Hungryfor" rows="3"></textarea>
-    </div>
-  </form>
-  <script src="./assets/script.js"></script>
-</body>
-</html>
+    <html lang="en-us">
+      <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./assets/css/style.css" />
+        <title>Date Night Decider</title>
+      </head>
+      <body>
+        <header id="top">
+            <h1>Date Night Decider</h1>
+        </header>
+      
+      </body>
+    
+      <!-- selector for tv show or movie -->
+      
+    <form>
+        <div class="form-group">
+          <label for="TVorMovie">Want to watch a show or movie?</label>
+          <select class="form-control" id="TvorMovie">
+            <option>TV show</option>
+            <option>Movie</option>
+          </select>
+        </div>
+        
+        <!-- selector for genre of movie/tv show -->
+        
+        <div class="form-group">
+          <label for="GenreSelect">What Genre would you like?</label>
+          <select class="form-control" id="GenreSelect">
+            <option>Action</option>
+            <option>Adventure</option>
+            <option>Animation</option>
+            <option>Biography</option>
+            <option>Comedy</option>
+            <option>Documentary</option>
+            <option>Drama</option>
+            <option>Family</option>
+            <option>Fantasy</option>
+            <option>Game-Show</option>
+            <option>History</option>
+            <option>Horror</option>
+            <option>Music</option>
+            <option>Musical</option>
+            <option>Mystery</option>
+            <option>News</option>
+            <option>Reality-TV</option>
+            <option>Romance</option>
+            <option>Sci-Fi</option>
+            <option>Sport</option>
+            <option>Talk-Show</option>
+            <option>Thriller</option>
+            <option>War</option>
+            <option>Western</option>           
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="yearSelect1">From what year range would you like your movie to be from</label>
+          <textarea class="form-control" id="startYear" rows="1" placeholder="start year"></textarea>
+          <textarea class="form-control" id="endYear" rows="1" placeholder="end year"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="imdbScore">IMDB score</label>
+          <textarea class="form-control" id="imdbScore1" rows="1" placeholder="IMDB Score minimum"></textarea>
+          <textarea class="form-control" id="imdbScore2" rows="1" placeholder="IMDB Score maximum"></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="Hungryfor">Tell us what you're hungry for</label>
+          <textarea class="form-control" placeholder="add ingredients with a space between them" id="Hungryfor" rows="2"></textarea>
+          
+        </div>
+      </form>
+      <button type="button" class="btn btn-primary" id="button1">Primary</button>
+      
+      <!-- Displays results -->
+      <div class="container" id="foodResults" img=""></div>
+      <div class="container" id="movieResults"></div>
+
+
+      <script src="./assets/script.js"></script>
+    </body>
+   </html>
