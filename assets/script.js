@@ -16,3 +16,6 @@ fetch('https://yummly2.p.rapidapi.com/feeds/auto-complete?q='+ ing, options)
     .then(response => console.log(response))
     .catch(err => console.error(err));
     console.log(response);
+
+
+    
