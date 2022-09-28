@@ -11,11 +11,11 @@ var tvOM = document.getElementById('tvOrMovie')
 
 var ingInput = localStorage.getItem('ing1');
 var genreInput = localStorage.getItem('gnr1');
-var startYearInput = document.getItem('strY1');
-var endYearInput = document.getItem('endY1');
-var imdb1Input = document.getItem('imdbS1');
-var imdb2Input = document.getItem('imdbS2');
-var tvOMInput = document.getItem('tvm');
+var startYearInput = localStorage.getItem('strY1');
+var endYearInput = localStorage.getItem('endY1');
+var imdb1Input = localStorage.getItem('imdbS1');
+var imdb2Input = localStorage.getItem('imdbS2');
+var tvOMInput = localStorage.getItem('tvm');
 
 function getMov(event){
 event.preventDefault();
@@ -44,12 +44,6 @@ fetch('https://ott-details.p.rapidapi.com/advancedsearch?start_year='+startYearI
         .then(response => response.json())
         .then(response => console.log(response))
         .catch(err => console.error(err));
-
-
-
-
-
-
 
 
 }
