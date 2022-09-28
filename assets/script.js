@@ -1,10 +1,21 @@
-var APIkey = 'a19e4cf765a3450f81fa9c3bed59231e';
+var APIkey = 'bf8e223a20msh569c19cc8692d4fp1499d6jsn96e050f62872';
 var ing = document.getElementById('Hungryfor');
 var buttonSelect = document.getElementById('button1');
 var displayRec = document.getElementById('foodResults');
+var genre = document.getElementById('GenreSelect');
+var startYear = document.getElementById('startYear');
+var endYear = document.getElementById('endYear');
+var imdb1 = document.getElementById('imdbScore1');
+var imdb2 = document.getElementById('imdbScore2');
 
 var ingInput = localStorage.getItem('ing1');
+var genreInput = localStorage.getItem('gnr1');
+var startYearInput = document.getItem('strY1');
+var endYearInput = document.getItem('endY1');
+var imdb1Input = document.getElementById('imdbS1');
+var imdb2Input = document.getElementById('imdbS2');
 
+function getMov(event){}
 
 function getIng(event){
 event.preventDefault();
@@ -15,27 +26,32 @@ localStorage.setItem('ing1', ingInput);
 console.log(ingInput);
 
 const options = {
-    method: 'GET',
-    headers: {
-        'X-RapidAPI-Key': '975449a451msh2a06483e508d496p18c10djsnf0466bf81871',
-        'X-RapidAPI-Host': 'yummly2.p.rapidapi.com'
-    }
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'bf8e223a20msh569c19cc8692d4fp1499d6jsn96e050f62872',
+		'X-RapidAPI-Host': 'yummly2.p.rapidapi.com'
+	}
 };
-fetch('https://api.spoonacular.com/recipes/findByIngredients=' + ingInput +'&number=10', options)
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(err => console.error(err))
-    // for(var i= 0; i< data.length; i++){
-
+fetch('https://yummly2.p.rapidapi.com/feeds/auto-complete?q=' + ingInput, options)
+        .then(function (response){
+            return response.json();
+        })    
+            .then(function (data) {
+                console.log(data);
+    
+                for (var i= 0; i< data.length; i++){
+                    var interDisplay= document.createElement('p');
+                    interDisplay.textContent = data[i].value;
         
-    //     displayRec.textContent = data[i].value;
-
+                 displayRec.append(interDisplay);
+        }
+    });
         
-    // }
-}
+    }
 
 
-//API for food search
+
+
 
 
 
