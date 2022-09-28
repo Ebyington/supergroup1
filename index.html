@@ -58,10 +58,26 @@
         </div>
         
         <div class="form-group">
+          <label for="yearSelect1">From what year range would you like your movie to be from</label>
+          <textarea class="form-control" id="startYear" rows="1" placeholder="start year"></textarea>
+          <textarea class="form-control" id="endYear" rows="1" placeholder="end year"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="imdbScore">IMDB score</label>
+          <textarea class="form-control" id="imdbScore1" rows="1" placeholder="IMDB Score minimum"></textarea>
+          <textarea class="form-control" id="imdbScore2" rows="1" placeholder="IMDB Score maximum"></textarea>
+        </div>
+        
+        <div class="form-group">
           <label for="Hungryfor">Tell us what you're hungry for</label>
-          <textarea class="form-control" id="Hungryfor" rows="3"></textarea>
+          <textarea class="form-control" id="Hungryfor" rows="2"></textarea>
+          
         </div>
       </form>
+
+      <div class="container" id="foodResults"></div>
+      <div class="container" id="movieResults"></div>
       <script src="./assets/script.js"></script>
     </body>
    </html>
