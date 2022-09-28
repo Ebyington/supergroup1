@@ -40,7 +40,7 @@ const options1 = {
         'X-RapidAPI-Host': 'ott-details.p.rapidapi.com'
     }
 };
-fetch('https://ott-details.p.rapidapi.com/advancedsearch?start_year='+startYearInput+'&end_year='+endYearInput+'&min_imdb='+imdb1Input+'&max_imdb='+imdb2Input+'&genre='+genreInput+'&language=english&type='+tvOMInput+'&sort=latest&page=any', options1)
+fetch('https://ott-details.p.rapidapi.com/advancedsearch?start_year='+startYearInput+'&end_year='+endYearInput+'&min_imdb='+imdb1Input+'&max_imdb='+imdb2Input+'&genre='+genreInput+'&language=english&type='+tvOMInput+'&sort=latest&page=1', options1)
         .then(response => response.json())
         .then(response => console.log(response))
         .catch(err => console.error(err));
@@ -88,10 +88,7 @@ fetch('https://yummly2.p.rapidapi.com/feeds/auto-complete?q=' + ingInput, option
 
  
 
-    // // fetch('https://ott-details.p.rapidapi.com/advancedsearch?start_year='+1970+'&end_year='+2020+'&min_imdb='+6+'&max_imdb='+7.8+'&genre='+action+'&language=english&type='+movie+'&sort=latest&page=any', options1)
-    // //     .then(response => response.json())
-    // //     .then(response => console.log(response))
-    // //     .catch(err => console.error(err));
-
-
-  buttonSelect.addEventListener('click', getIng);
+   
+    buttonSelect.addEventListener('click', getMov);
+    buttonSelect.addEventListener('click', getIng);
+  
