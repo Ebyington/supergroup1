@@ -1,6 +1,7 @@
-var APIkey = '975449a451msh2a06483e508d496p18c10djsnf0466bf81871';
+var APIkey = 'a19e4cf765a3450f81fa9c3bed59231e';
 var ing = document.getElementById('Hungryfor');
 var buttonSelect = document.getElementById('button1');
+var displayRec = document.getElementById('foodResults');
 
 var ingInput = localStorage.getItem('ing1');
 
@@ -8,6 +9,7 @@ var ingInput = localStorage.getItem('ing1');
 function getIng(event){
 event.preventDefault();
 console.log(event);  
+ing.value.split(" ");
 ingInput= ing.value;
 localStorage.setItem('ing1', ingInput);
 console.log(ingInput);
@@ -19,16 +21,17 @@ const options = {
         'X-RapidAPI-Host': 'yummly2.p.rapidapi.com'
     }
 };
-fetch('https://yummly2.p.rapidapi.com/feeds/auto-complete?q=' + ingInput, options)
+fetch('https://api.spoonacular.com/recipes/findByIngredients=' + ingInput +'&number=10', options)
     .then(response => response.json())
     .then(data => console.log(data))
     .catch(err => console.error(err))
     // for(var i= 0; i< data.length; i++){
-    //     data[i].
 
+        
+    //     displayRec.textContent = data[i].value;
 
-    // };
- 
+        
+    // }
 }
 
 
