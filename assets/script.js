@@ -7,15 +7,52 @@ var startYear = document.getElementById('startYear');
 var endYear = document.getElementById('endYear');
 var imdb1 = document.getElementById('imdbScore1');
 var imdb2 = document.getElementById('imdbScore2');
+var tvOM = document.getElementById('tvOrMovie')
 
 var ingInput = localStorage.getItem('ing1');
 var genreInput = localStorage.getItem('gnr1');
 var startYearInput = document.getItem('strY1');
 var endYearInput = document.getItem('endY1');
-var imdb1Input = document.getElementById('imdbS1');
-var imdb2Input = document.getElementById('imdbS2');
+var imdb1Input = document.getItem('imdbS1');
+var imdb2Input = document.getItem('imdbS2');
+var tvOMInput = document.getItem('tvm');
 
-function getMov(event){}
+function getMov(event){
+event.preventDefault();
+console.log(event);
+genreInput= genre.value;
+localStorage.setItem('gnr1', genreInput);
+startYearInput= startYear.value;
+localStorage.setItem('strY1', startYearInput);
+endYearInput= endYear.value;
+localStorage.setItem('endY1',endYearInput);
+imdb1Input= imdb1.value;
+localStorage.setItem('imdbS1', imdb1Input);
+imdb2Input= imdb2.value;
+localStorage.setItem('imdbS2', imdb2Input);
+tvOMInput= tvOM.value;
+localStorage.setItem('tvm', tvOMInput);
+ 
+const options1 = {
+    method: 'GET',
+    headers: {
+        'X-RapidAPI-Key': '975449a451msh2a06483e508d496p18c10djsnf0466bf81871',
+        'X-RapidAPI-Host': 'ott-details.p.rapidapi.com'
+    }
+};
+fetch('https://ott-details.p.rapidapi.com/advancedsearch?start_year='+startYearInput+'&end_year='+endYearInput+'&min_imdb='+imdb1Input+'&max_imdb='+imdb2Input+'&genre='+genreInput+'&language=english&type='+tvOMInput+'&sort=latest&page=any', options1)
+        .then(response => response.json())
+        .then(response => console.log(response))
+        .catch(err => console.error(err));
+
+
+
+
+
+
+
+
+}
 
 function getIng(event){
 event.preventDefault();
