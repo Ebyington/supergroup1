@@ -41,9 +41,16 @@ const options1 = {
     }
 };
 fetch('https://ott-details.p.rapidapi.com/advancedsearch?start_year='+startYearInput+'&end_year='+endYearInput+'&min_imdb='+imdb1Input+'&max_imdb='+imdb2Input+'&genre='+genreInput+'&language=english&type='+tvOMInput+'&sort=latest&page=1', options1)
-        .then(response => response.json())
-        .then(response => console.log(response))
-        .catch(err => console.error(err));
+        .then(function (response){
+            return response.json();
+        })    
+            .then(function (data) {
+             console.log(data);
+            console.log();
+            for (var i= 0; i<data.length; i++){
+           
+}
+});
 
 
 }
@@ -69,12 +76,12 @@ fetch('https://yummly2.p.rapidapi.com/feeds/auto-complete?q=' + ingInput, option
         })    
             .then(function (data) {
                 console.log(data);
-    
-                for (var i= 0; i< data.length; i++){
+                console.log(data.searches);
+                for (var i= 0; i< data.searches.length; i++){
                     var interDisplay= document.createElement('p');
-                    interDisplay.textContent = data[i].value;
-        
-                 displayRec.append(interDisplay);
+                    interDisplay.textContent = data.searches[i];
+                    console.log(interDisplay);
+                    displayRec.append(interDisplay);
         }
     });
         
