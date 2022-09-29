@@ -11,7 +11,12 @@ var endYear = document.getElementById('endYear');
 var imdb1 = document.getElementById('imdbScore1');
 var imdb2 = document.getElementById('imdbScore2');
 var tvOM = document.getElementById('tvOrMovie')
+
 //local storage variables that will recieve inputs from the webpage
+
+
+
+
 var ingInput = localStorage.getItem('ing1');
 var genreInput = localStorage.getItem('gnr1');
 var startYearInput = localStorage.getItem('strY1');
@@ -49,6 +54,7 @@ function getMov(event) {
         .then(function (response) {
             //json converting option1 output into objects
             return response.json();
+
         })
         //sets the data from the json output
         .then(function (data) {
@@ -94,6 +100,7 @@ function getIng(event) {
     };
     fetch('https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&q=' + ingInput, options)
         .then(function (response) {
+
             return response.json();
 
         })
@@ -137,6 +144,7 @@ function getIng(event) {
                 instDisplay.textContent="rec coming soon";
         }
             
+
             console.log(nameDisplay);
             displayRec.append(nameDisplay);
             displayRec.append(descDisplay);
@@ -164,3 +172,4 @@ function clearCache(event) {
 buttonSelect.addEventListener('click', getMov);
 buttonSelect.addEventListener('click', getIng);
 buttonSelect2.addEventListener('click', clearCache);
+
