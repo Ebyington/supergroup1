@@ -1,16 +1,33 @@
 #top {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    background-color: brown;
-    margin: 0px;
-    font-size: 20pt;
-    font-family: Arial, Helvetica, serif;
-    
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: brown;
+  margin: 0px;
+  font-size: 20pt;
+  font-family: Arial, Helvetica, serif;
 }
+.form-group,
+.form-group2,
 .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: blanchedalmond;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: blanchedalmond;
+  margin: 5% 20% 0% 5%;
+  border: 3%;
+  border-color: black;
+}
+.form-group2,
+.form-group {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 15pt;
+  justify-content: space-between;
+}
+#button1 {
+  margin: 10%;
+  display: block;
+  background-color: floralwhite;
 }
