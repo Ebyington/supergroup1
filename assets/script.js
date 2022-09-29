@@ -2,12 +2,14 @@ var APIkey = 'bf8e223a20msh569c19cc8692d4fp1499d6jsn96e050f62872';
 var ing = document.getElementById('Hungryfor');
 var buttonSelect = document.getElementById('button1');
 var displayRec = document.getElementById('foodResults');
+var movDisplay = document.getElementById('movieResults');
 var genre = document.getElementById('GenreSelect');
 var startYear = document.getElementById('startYear');
 var endYear = document.getElementById('endYear');
 var imdb1 = document.getElementById('imdbScore1');
 var imdb2 = document.getElementById('imdbScore2');
 var tvOM = document.getElementById('tvOrMovie')
+
 
 var ingInput = localStorage.getItem('ing1');
 var genreInput = localStorage.getItem('gnr1');
@@ -45,15 +47,27 @@ fetch('https://ott-details.p.rapidapi.com/advancedsearch?start_year='+startYearI
             return response.json();
         })    
             .then(function (data) {
-             console.log(data);
-            console.log();
-            for (var i= 0; i<data.length; i++){
+              console.log(data);
+        
+              var randomSelect = data.results.length;
+              var selection = Math.floor(Math.random()*randomSelect);
+              var titleDisplay = document.createElement('p');
+              var desDisplay = document.createElement('p');
+              var imgDisplay = document.createElement('img');
+              var imgURL = data.results[selection].imageurl;
+ 
+              titleDisplay.textContent = data.results[selection].title;
+              desDisplay.textContent = data.results[selection].synopsis;
+              imgDisplay.src = imgURL;
+ 
+                  movDisplay.append('Title', titleDisplay);
+                  movDisplay.append(desDisplay);
+                  movDisplay.append(imgDisplay);
            
-}
 });
-
-
 }
+
+
 
 function getIng(event){
 event.preventDefault();
@@ -76,13 +90,13 @@ fetch('https://yummly2.p.rapidapi.com/feeds/auto-complete?q=' + ingInput, option
         })    
             .then(function (data) {
                 console.log(data);
-                console.log(data.searches);
-                for (var i= 0; i< data.searches.length; i++){
+                console.log(data.title);
+        
                     var interDisplay= document.createElement('p');
-                    interDisplay.textContent = data.searches[i];
+                    interDisplay.textContent = data.title[i];
                     console.log(interDisplay);
                     displayRec.append(interDisplay);
-        }
+
     });
         
     }
@@ -98,4 +112,3 @@ fetch('https://yummly2.p.rapidapi.com/feeds/auto-complete?q=' + ingInput, option
    
     buttonSelect.addEventListener('click', getMov);
     buttonSelect.addEventListener('click', getIng);
-  
