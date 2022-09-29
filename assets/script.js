@@ -47,23 +47,25 @@ fetch('https://ott-details.p.rapidapi.com/advancedsearch?start_year='+startYearI
             return response.json();
         })    
             .then(function (data) {
-              console.log(data);
-        
-              var randomSelect = data.results.length;
-              var selection = Math.floor(Math.random()*randomSelect);
-              var titleDisplay = document.createElement('p');
-              var desDisplay = document.createElement('p');
-              var imgDisplay = document.createElement('img');
-              var imgURL = data.results[selection].imageurl;
- 
-              titleDisplay.textContent = data.results[selection].title;
-              desDisplay.textContent = data.results[selection].synopsis;
-              imgDisplay.src = imgURL;
- 
-                  movDisplay.append('Title', titleDisplay);
-                  movDisplay.append(desDisplay);
-                  movDisplay.append(imgDisplay);
+
+             console.log(data);
            
+             var randomSelect = data.results.length;
+             var selection = Math.floor(Math.random()*randomSelect);
+             var titleDisplay = document.createElement('p');
+             var desDisplay = document.createElement('p');
+             var imgDisplay = document.createElement('img');
+             var imgURL = data.results[selection].imageurl;
+                
+             titleDisplay.textContent = data.results[selection].title;
+             desDisplay.textContent = data.results[selection].synopsis;
+             imgDisplay.src = imgURL;
+                 
+                 movDisplay.append(titleDisplay);
+                 movDisplay.append(desDisplay);
+                 movDisplay.append(imgDisplay);
+           
+
 });
 }
 
@@ -81,21 +83,43 @@ const options = {
 	method: 'GET',
 	headers: {
 		'X-RapidAPI-Key': 'bf8e223a20msh569c19cc8692d4fp1499d6jsn96e050f62872',
-		'X-RapidAPI-Host': 'yummly2.p.rapidapi.com'
+		'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
 	}
 };
-fetch('https://yummly2.p.rapidapi.com/feeds/auto-complete?q=' + ingInput, options)
+fetch('https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&q=' + ingInput, options)
         .then(function (response){
             return response.json();
+            
         })    
             .then(function (data) {
                 console.log(data);
-                console.log(data.title);
+
+                console.log(data.results);
+              
+                    var randomSelect = data.results.length;
+                    var fselection = Math.floor(Math.random()*randomSelect); 
+                    var nameDisplay= document.createElement('p');
+                    var descDisplay= document.createElement('p');
+                    var instDisplay= document.createElement('p');
+                    var yieldDisplay= document.createElement('p');
+                    var thumbDisplay= document.createElement('img');
+                    nameDisplay.textContent = data.results[fselection].name;
+                    descDisplay.textContent = data.results[fselection].description;
+                    
+                    for(var i=0;i<data.results[fselection].instructions;i++){
+                    instDisplay.textContent = data.results[fselection].instructions[i].display_text;
+                    console.log(data.results[fselection].instructions[i].display_text);
+                    }
+                    yieldDisplay.textContent = data.results[fselection].yields;
+                    thumbDisplay.src = data.results[fselection].thumbnail_url;
+
+                    console.log(nameDisplay);
+                    displayRec.append(nameDisplay);
+                    displayRec.append(descDisplay);
+                    displayRec.append(instDisplay);
+                    displayRec.append(yieldDisplay);
+                    displayRec.append(thumbDisplay);
         
-                    var interDisplay= document.createElement('p');
-                    interDisplay.textContent = data.title[i];
-                    console.log(interDisplay);
-                    displayRec.append(interDisplay);
 
     });
         
