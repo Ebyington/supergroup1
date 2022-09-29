@@ -10,6 +10,7 @@ var imdb1 = document.getElementById('imdbScore1');
 var imdb2 = document.getElementById('imdbScore2');
 var tvOM = document.getElementById('tvOrMovie')
 
+
 var ingInput = localStorage.getItem('ing1');
 var genreInput = localStorage.getItem('gnr1');
 var startYearInput = localStorage.getItem('strY1');
@@ -46,6 +47,7 @@ fetch('https://ott-details.p.rapidapi.com/advancedsearch?start_year='+startYearI
             return response.json();
         })    
             .then(function (data) {
+
              console.log(data);
            
              var randomSelect = data.results.length;
@@ -65,9 +67,9 @@ fetch('https://ott-details.p.rapidapi.com/advancedsearch?start_year='+startYearI
            
 
 });
-
-
 }
+
+
 
 function getIng(event){
 event.preventDefault();
@@ -91,6 +93,7 @@ fetch('https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&q=' + ingInput, 
         })    
             .then(function (data) {
                 console.log(data);
+
                 console.log(data.results);
               
                     var randomSelect = data.results.length;
@@ -117,6 +120,7 @@ fetch('https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&q=' + ingInput, 
                     displayRec.append(yieldDisplay);
                     displayRec.append(thumbDisplay);
         
+
     });
         
     }
@@ -132,4 +136,3 @@ fetch('https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&q=' + ingInput, 
    
     buttonSelect.addEventListener('click', getMov);
     buttonSelect.addEventListener('click', getIng);
-  
