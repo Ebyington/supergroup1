@@ -1,0 +1,16 @@
+#top {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: brown;
+    margin: 0px;
+    font-size: 20pt;
+    font-family: Arial, Helvetica, serif;
+    
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: blanchedalmond;
+}
