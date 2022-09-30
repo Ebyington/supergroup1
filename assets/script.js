@@ -2,6 +2,7 @@
 
 var APIkey = 'bf8e223a20msh569c19cc8692d4fp1499d6jsn96e050f62872';
 var ing = document.getElementById('Hungryfor');
+var cus = document.getElementById('CuisineSelect')
 var buttonSelect = document.getElementById('button1');
 var buttonSelect2 = document.getElementById('button2');
 var displayRec = document.getElementById('foodResults');
@@ -16,6 +17,7 @@ var tvOM = document.getElementById('tvOrMovie')
 //local storage variables that will recieve inputs from the webpage
 
 var ingInput = localStorage.getItem('ing1');
+var cusInput = localStorage.getitem('cus1')
 var genreInput = localStorage.getItem('gnr1');
 var startYearInput = localStorage.getItem('strY1');
 var endYearInput = localStorage.getItem('endY1');
@@ -107,6 +109,8 @@ function getIng(event) {
     ingInput = ing.value;
     localStorage.setItem('ing1', ingInput);
     console.log(ingInput);
+    cusInput = cus.value;
+            localStorage.setItem('cus1', cusInput);
 
 //API for the food side
 
@@ -117,7 +121,7 @@ function getIng(event) {
             'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
         }
     };
-    fetch('https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&q=' + ingInput, options)
+    fetch('https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&cuisine='+cusInput+'&q=' + ingInput, options)
         .then(function (response) {
 
             return response.json();
@@ -127,6 +131,7 @@ function getIng(event) {
         .then(function (data) {
             console.log(data);
             console.log(data.results);
+            
 
             //created empty element variables
 
