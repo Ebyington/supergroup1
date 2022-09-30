@@ -17,7 +17,7 @@ var tvOM = document.getElementById('tvOrMovie')
 //local storage variables that will recieve inputs from the webpage
 
 var ingInput = localStorage.getItem('ing1');
-var cusInput = localStorage.getitem('cus1')
+var cusInput = localStorage.getItem('cus1');
 var genreInput = localStorage.getItem('gnr1');
 var startYearInput = localStorage.getItem('strY1');
 var endYearInput = localStorage.getItem('endY1');
@@ -110,7 +110,8 @@ function getIng(event) {
     localStorage.setItem('ing1', ingInput);
     console.log(ingInput);
     cusInput = cus.value;
-            localStorage.setItem('cus1', cusInput);
+    localStorage.setItem('cus1', cusInput);
+    console.log(cusInput);
 
 //API for the food side
 
