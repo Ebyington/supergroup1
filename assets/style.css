@@ -7,39 +7,47 @@
     margin: 0px;
     font-size: 20pt;
     font-family: Arial, Helvetica, serif;
+    padding: 20px;
+    border: 2px solid rgb(0, 0, 0);
   }
 /* blanket flexbox rules for consistency */
-  .form-group,
-  .form-group2,
-  .container {
+.form-group,
+.form-group2 {
     display: flex;
     flex-wrap: wrap;
     background-color: blanchedalmond;
     margin: 5% 5% 5%;
-  }
-/* targets forms to apply layout */
-  .form-group2,
-  .form-group {
+    padding: 20px;
+    border: 2px solid rgb(0, 0, 0);
     text-align: center;
     font-size: 15pt;
     justify-content: space-between;
     padding: 5%;
   }
 
-  #button2,
-  #button1 {
+#button2,
+#button1 {
     display: flex;
     flex-wrap: wrap;
     margin: 3%;
     font-size: large;
     align-items: flex-start;
   }
-
+/* sets rules for the results containers */
 .container {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
-  height: 100%;
+  background-color: blanchedalmond;
   object-fit: scale-down;
-  overflow: hidden;
+  overflow: scroll;
+  border: 3px solid #fff;
+  float: left;
+  padding: 20px;
+  border: 2px solid rgb(0, 0, 0);
+  margin: 5% 5% 5%;
+  width: 350px;
+  height: 350px;
 }
+
+
+
