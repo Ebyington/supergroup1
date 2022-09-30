@@ -1,3 +1,4 @@
+/* header styling */
 #top {
     display: flex;
     justify-content: center;
@@ -7,24 +8,19 @@
     font-size: 20pt;
     font-family: Arial, Helvetica, serif;
   }
-
+/* blanket flexbox rules for consistency */
   .form-group,
   .form-group2,
   .container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     background-color: blanchedalmond;
-    margin: 5% 20% 0%;
-    border: 3%;
-    border-color: black;
+    margin: 5% 5% 5%;
   }
-
+/* targets forms to apply layout */
   .form-group2,
   .form-group {
     text-align: center;
-    display: flex;
-    flex-wrap: wrap;
     font-size: 15pt;
     justify-content: space-between;
     padding: 5%;
@@ -40,8 +36,10 @@
   }
 
 .container {
-  width: 50%;
-  height: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
   object-fit: scale-down;
   overflow: hidden;
 }
