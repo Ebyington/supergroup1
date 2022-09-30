@@ -121,9 +121,11 @@ function getIng(event) {
             thumbDisplay.src = data.results[fselection].thumbnail_url;
             console.log(fselection);
             console.log(data.results);
-
-
-
+            
+            
+            displayRec.append(nameDisplay);
+            displayRec.append(descDisplay);
+            
             if (data.results[fselection].instructions) {
                 var i = 0;
                 while(data.results[fselection].instructions[i]) {
@@ -141,13 +143,11 @@ function getIng(event) {
                 }
             }
             else{
-                instDisplay.textContent="rec coming soon";
+                instDisplay.textContent="Recipe coming soon!";
         }
             
 
             console.log(nameDisplay);
-            displayRec.append(nameDisplay);
-            displayRec.append(descDisplay);
             displayRec.append(instDisplay);
             displayRec.append(yieldDisplay);
             displayRec.append(thumbDisplay);
