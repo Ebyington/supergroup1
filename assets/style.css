@@ -16,6 +16,8 @@
     display: flex;
     flex-wrap: wrap;
     background-color: blanchedalmond;
+    box-shadow: 10px 10px rgba(196, 191, 191, 0.959) ;
+    border-radius: 10px 10px;
     margin: 5% 5% 5%;
     padding: 20px;
     border: 2px solid rgb(0, 0, 0);
@@ -33,6 +35,7 @@
     margin: 3%;
     font-size: large;
     align-items: flex-start;
+    justify-content: center;
   }
 /* sets rules for the results containers */
 .container {
