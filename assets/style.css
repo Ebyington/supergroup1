@@ -21,7 +21,8 @@
     border: 2px solid rgb(0, 0, 0);
     text-align: center;
     font-size: 15pt;
-    justify-content: space-between;
+    justify-content: space-evenly;
+  
     padding: 5%;
   }
 
@@ -47,7 +48,9 @@
   margin: 5% 5% 5%;
   width: 350px;
   height: 350px;
+  justify-content: space-around;
 }
-
+html {
+  background-color: rgb(54, 54, 54)}
 
 
