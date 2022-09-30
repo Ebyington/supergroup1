@@ -1,6 +1,10 @@
-# supergroup1
+# Date Night Decider
 
-Repo for project 1
+An application to help you decide on what to watch and eat.
+
+## Discription
+
+
 
 # JavaScript
 
