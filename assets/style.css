@@ -6,7 +6,7 @@
     background-color: brown;
     margin: 0px;
     font-size: 20pt;
-    font-family: Arial, Helvetica, serif;
+    font-family: Montserrat, sans-serif;
     padding: 20px;
     border: 2px solid rgb(0, 0, 0);
   }
@@ -23,7 +23,7 @@
     border-color: black;
     font-family: Montserrat, sans-serif;
     text-align: center;
-    font-size: 15pt;
+    font-size: 10pt;
     justify-content: space-evenly;
   
     padding: 5%;
