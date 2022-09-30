@@ -15,7 +15,7 @@
     flex-wrap: wrap;
     justify-content: center;
     background-color: blanchedalmond;
-    margin: 5% 20% 0% 5%;
+    margin: 5% 20% 0%;
     border: 3%;
     border-color: black;
   }
@@ -37,5 +37,11 @@
     margin: 3%;
     font-size: large;
     align-items: flex-start;
-
   }
+
+.container {
+  width: 50%;
+  height: 50%;
+  object-fit: scale-down;
+  overflow: hidden;
+}
