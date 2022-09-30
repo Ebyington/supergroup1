@@ -11,14 +11,17 @@
     border: 2px solid rgb(0, 0, 0);
   }
 /* blanket flexbox rules for consistency */
-.form-group,
-.form-group2 {
+  .form-group,
+  .form-group2,
+  .container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     background-color: blanchedalmond;
-    margin: 5% 5% 5%;
-    padding: 20px;
-    border: 2px solid rgb(0, 0, 0);
+    margin: 5% 20% 0% 5%;
+    border: 3%;
+    border-color: black;
+    font-family: Montserrat, sans-serif;
     text-align: center;
     font-size: 15pt;
     justify-content: space-evenly;
