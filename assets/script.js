@@ -147,6 +147,7 @@ function getIng(event) {
 
             //parses through the data array then the instructions array and gets the text for the recipes instructions
 
+
             if (data.results[fselection].instructions) {
                 var i = 0;
                 while(data.results[fselection].instructions[i]) {
@@ -167,8 +168,6 @@ function getIng(event) {
             
 
             console.log(nameDisplay);
-            displayRec.append(nameDisplay);
-            displayRec.append(descDisplay);
             displayRec.append(instDisplay);
             displayRec.append(yieldDisplay);
             displayRec.append(thumbDisplay);

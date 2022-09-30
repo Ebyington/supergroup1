@@ -7,6 +7,7 @@
     font-size: 20pt;
     font-family: Arial, Helvetica, serif;
   }
+
   .form-group,
   .form-group2,
   .container {
@@ -14,10 +15,11 @@
     flex-wrap: wrap;
     justify-content: center;
     background-color: blanchedalmond;
-    margin: 5% 20% 0% 5%;
+    margin: 5% 20% 0%;
     border: 3%;
     border-color: black;
   }
+
   .form-group2,
   .form-group {
     text-align: center;
@@ -25,11 +27,21 @@
     flex-wrap: wrap;
     font-size: 15pt;
     justify-content: space-between;
+    padding: 5%;
   }
+
+  #button2,
   #button1 {
-    margin: 10%;
-    display: block;
-    background-color: floralwhite;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 3%;
+    font-size: large;
+    align-items: flex-start;
   }
-  
-  
+
+.container {
+  width: 50%;
+  height: 50%;
+  object-fit: scale-down;
+  overflow: hidden;
+}
