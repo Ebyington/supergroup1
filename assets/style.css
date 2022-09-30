@@ -11,10 +11,12 @@
     border: 2px solid rgb(0, 0, 0);
   }
 /* blanket flexbox rules for consistency */
-.form-group,
-.form-group2 {
+  .form-group,
+  .form-group2,
+  .container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     background-color: blanchedalmond;
     box-shadow: 10px 10px rgba(196, 191, 191, 0.959) ;
     border-radius: 10px 10px;
