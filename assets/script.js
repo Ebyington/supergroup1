@@ -1,4 +1,5 @@
 //variables calling element ids from index.html
+
 var APIkey = 'bf8e223a20msh569c19cc8692d4fp1499d6jsn96e050f62872';
 var ing = document.getElementById('Hungryfor');
 var buttonSelect = document.getElementById('button1');
@@ -14,9 +15,6 @@ var tvOM = document.getElementById('tvOrMovie')
 
 //local storage variables that will recieve inputs from the webpage
 
-
-
-
 var ingInput = localStorage.getItem('ing1');
 var genreInput = localStorage.getItem('gnr1');
 var startYearInput = localStorage.getItem('strY1');
@@ -24,11 +22,15 @@ var endYearInput = localStorage.getItem('endY1');
 var imdb1Input = localStorage.getItem('imdbS1');
 var imdb2Input = localStorage.getItem('imdbS2');
 var tvOMInput = localStorage.getItem('tvm');
+
 //function getMov is called to set local storage inputs for the movie genre, year, imdb rating, etc.
+
 function getMov(event) {
     event.preventDefault();
     console.log(event);
+
     //local storage var being set with values from inputs on webpage
+
     genreInput = genre.value;
     localStorage.setItem('gnr1', genreInput);
     startYearInput = startYear.value;
@@ -41,7 +43,9 @@ function getMov(event) {
     localStorage.setItem('imdbS2', imdb2Input);
     tvOMInput = tvOM.value;
     localStorage.setItem('tvm', tvOMInput);
+
     //api key and host
+
     const options1 = {
         method: 'GET',
         headers: {
@@ -49,40 +53,53 @@ function getMov(event) {
             'X-RapidAPI-Host': 'ott-details.p.rapidapi.com'
         }
     };
+
     //fetch call for movie api
+
     fetch('https://ott-details.p.rapidapi.com/advancedsearch?start_year=' + startYearInput + '&end_year=' + endYearInput + '&min_imdb=' + imdb1Input + '&max_imdb=' + imdb2Input + '&genre=' + genreInput + '&language=english&type=' + tvOMInput + '&sort=latest&page=1', options1)
         .then(function (response) {
+
             //json converting option1 output into objects
+
             return response.json();
 
         })
         //sets the data from the json output
+
         .then(function (data) {
             console.log(data);
+
             //runs through array of movies and selects one at random that matches parameters set
+
             var randomSelect = data.results.length;
             var selection = Math.floor(Math.random() * randomSelect);
+
             //creates empty elements to then fill with text content from api
+
             var titleDisplay = document.createElement('p');
             var desDisplay = document.createElement('p');
             var imgDisplay = document.createElement('img');
             var imgURL = data.results[selection].imageurl;
             console.log(selection);
+
             //filling var with api info
+
             titleDisplay.textContent = data.results[selection].title;
             desDisplay.textContent = data.results[selection].synopsis;
             imgDisplay.src = imgURL;
+
             //appends to page
+
             movDisplay.append(titleDisplay);
             movDisplay.append(desDisplay);
             movDisplay.append(imgDisplay);
-
 
         });
 
 
 }
 //call getIng to search for recepies with values from webpage
+
 function getIng(event) {
     event.preventDefault();
     console.log(event);
@@ -90,6 +107,8 @@ function getIng(event) {
     ingInput = ing.value;
     localStorage.setItem('ing1', ingInput);
     console.log(ingInput);
+
+//API for the food side
 
     const options = {
         method: 'GET',
@@ -104,9 +123,12 @@ function getIng(event) {
             return response.json();
 
         })
+
         .then(function (data) {
             console.log(data);
             console.log(data.results);
+
+            //created empty element variables
 
             var randomSelect = data.results.length;
             var fselection = Math.floor(Math.random() * randomSelect);
@@ -123,6 +145,7 @@ function getIng(event) {
             console.log(data.results);
 
 
+            //parses through the data array then the instructions array and gets the text for the recipes instructions
 
             if (data.results[fselection].instructions) {
                 var i = 0;
@@ -130,9 +153,6 @@ function getIng(event) {
                var screen = document.createElement('p');
                screen.textContent = data.results[fselection].instructions[i].display_text;
                displayRec.append(screen);
-                    // for(var j=0;j<data.results[fselection].instructions.length;j++){
-                    //     }
-                    //     console.log(data.results[fselection].instructions[i].display_text);
                         i++;
                         if(i===data.results[fselection].instructions.length){
                             break;
@@ -140,8 +160,9 @@ function getIng(event) {
                 
                 }
             }
+            //if no recipe exists this sting will show
             else{
-                instDisplay.textContent="rec coming soon";
+                instDisplay.textContent="Recipe coming soon!";
         }
             
 
@@ -156,20 +177,14 @@ function getIng(event) {
 
    
 }
+//function to clear screen
 function clearCache(event) {
     localStorage.clear(event);
     window.location.reload();
 }
 
-
-
-
-
-
-
-
+//caling buttons when clicked will exectue functions 
 
 buttonSelect.addEventListener('click', getMov);
 buttonSelect.addEventListener('click', getIng);
 buttonSelect2.addEventListener('click', clearCache);
-
